@@ -6,6 +6,7 @@
     <groupId>com.example</groupId>
     <artifactId>ecomerce-dell-poc</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <properties>
         <compiler-plugin.version>3.12.1</compiler-plugin.version>
         <maven.compiler.release>21</maven.compiler.release>
@@ -17,17 +18,12 @@
         <skipITs>true</skipITs>
         <surefire-plugin.version>3.2.5</surefire-plugin.version>
     </properties>
-
     <modules>
-        <module>user-service</module>
         <module>order-service</module>
-        <module>inventory-service</module>
         <module>notification-service</module>
-        <module>payment-service</module>
-        <module>gateway-service</module>
+        <module>inventory-service</module>
         <module>discovery-service</module>
     </modules>
-
     <dependencyManagement>
         <dependencies>
             <dependency>
@@ -95,6 +91,7 @@
                 <configuration>
                     <systemPropertyVariables>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                        <!--suppress UnresolvedMavenProperty -->
                         <maven.home>${maven.home}</maven.home>
                     </systemPropertyVariables>
                 </configuration>
@@ -115,6 +112,7 @@
                         <native.image.path>${project.build.directory}/${project.build.finalName}-runner
                         </native.image.path>
                         <java.util.logging.manager>org.jboss.logmanager.LogManager</java.util.logging.manager>
+                        <!--suppress UnresolvedMavenProperty -->
                         <maven.home>${maven.home}</maven.home>
                     </systemPropertyVariables>
                 </configuration>

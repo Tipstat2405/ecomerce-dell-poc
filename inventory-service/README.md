@@ -53,7 +53,26 @@ You can then execute your native executable with: `./target/inventory-service-1.
 
 If you want to learn more about building native executables, please consult https://quarkus.io/guides/maven-tooling.
 
+## Related Guides
+
+- MongoDB client ([guide](https://quarkus.io/guides/mongodb)): Connect to MongoDB in either imperative or reactive style
+- RESTEasy Reactive's REST Client ([guide](https://quarkus.io/guides/rest-client-reactive)): Call REST services
+  reactively
+- RESTEasy Reactive ([guide](https://quarkus.io/guides/resteasy-reactive)): A Jakarta REST implementation utilizing
+  build time processing and Vert.x. This extension is not compatible with the quarkus-resteasy extension, or any of the
+  extensions that depend on it.
+- Hibernate ORM with Panache ([guide](https://quarkus.io/guides/hibernate-orm-panache)): Simplify your persistence code
+  for Hibernate ORM via the active record or the repository pattern
+
 ## Provided Code
+
+### Hibernate ORM
+
+Create your first JPA entity
+
+[Related guide section...](https://quarkus.io/guides/hibernate-orm)
+
+[Related Hibernate with Panache section...](https://quarkus.io/guides/hibernate-orm-panache)
 
 ### RESTEasy Reactive
 
