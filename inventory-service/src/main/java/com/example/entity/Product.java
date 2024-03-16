@@ -18,6 +18,8 @@ public class Product extends PanacheMongoEntityBase implements Serializable {
     @BsonProperty(value = "description")
     private String description;
 
+    @BsonProperty(value = "skuCode")
+    private String skuCode;
     @NotNull
     @BsonProperty(value = "price")
     private BigDecimal price;
@@ -28,19 +30,29 @@ public class Product extends PanacheMongoEntityBase implements Serializable {
     @BsonProperty(value = "status")
     private ProductStatus status;
 
-    private Categories category;
 
-
-    public Product() {
+    public static Product findByskuCode(String skuCode){
+        return find("skuCode", skuCode).firstResult();
     }
 
-    public Product(String name, String description, BigDecimal price, Integer quantity, ProductStatus status, Categories category) {
+    public Product(String name, String description, String skuCode, BigDecimal price, Integer quantity, ProductStatus status) {
         this.name = name;
         this.description = description;
+        this.skuCode = skuCode;
         this.price = price;
         this.quantity = quantity;
         this.status = status;
-        this.category = category;
+    }
+
+    public String getSkuCode() {
+        return skuCode;
+    }
+
+    public void setSkuCode(String skuCode) {
+        this.skuCode = skuCode;
+    }
+
+    public Product() {
     }
 
     public String getName() {
@@ -83,11 +95,5 @@ public class Product extends PanacheMongoEntityBase implements Serializable {
         this.status = status;
     }
 
-    public Categories getCategory() {
-        return category;
-    }
 
-    public void setCategory(Categories category) {
-        this.category = category;
-    }
 }

@@ -6,4 +6,10 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @ApplicationScoped
 public class ProductRepository implements PanacheMongoRepositoryBase<Product,Integer> {
+
+    public Product findByName(String name) {
+        return find("name", name).firstResult();
+    }
+
+
 }
